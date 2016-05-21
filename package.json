@@ -1,0 +1,104 @@
+{
+	"name": "vscode-emacsify",
+	"displayName": "Emacsify",
+	"description": "Make Emacs Great Again",
+	"version": "0.0.1",
+	"publisher": "gizak",
+	"engines": {
+		"vscode": "^1.0.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/src/index",
+	"contributes": {
+		"commands": [
+			{
+				"command": "emacsify.sayHello",
+				"title": "Hello World"
+			}
+		],
+		"keybindings": [
+			{
+				"key": "Ctrl+K",
+				"command": "emacsify.killLine",
+				"when": "editorTextFocus"
+			},
+			{
+				"key": "Alt+X",
+				"command": "workbench.action.showCommands"
+			},
+						{
+				"key": "Ctrl+X O",
+				"command": "workbench.action.cycleEditor"
+			},
+			{
+				"key": "Ctrl+X Ctrl+F",
+				"command": "workbench.action.files.openFileFolder"
+			},
+						{
+				"key": "Ctrl+X Ctrl+S",
+				"command": "workbench.action.files.save"
+			},
+						{
+				"key": "Ctrl+X K",
+				"command": "workbench.action.closeActiveEditor",
+				"when": "editorTextFocus"
+			},
+						{
+				"key": "Ctrl+C Ctrl+C",
+				"command": "editor.action.addCommentLine",
+				"when": "editorTextFocus"
+			},
+			{
+				"key": "Ctrl+C Ctrl+U",
+				"command": "editor.action.removeCommentLine",
+				"when": "editorTextFocus"
+			},            {
+				"key": "Ctrl+/",
+				"command": "undo",
+				"when": "editorTextFocus"
+			},
+						{
+				"key": "Ctrl+O",
+				"command": "editor.action.insertLineAfter",
+				"when": "editorTextFocus"
+			},            {
+				"key": "Ctrl+W",
+				"command": "editor.action.clipboardCutAction",
+				"when": "editorTextFocus"
+			},
+			{
+				"key": "Alt+W",
+				"command": "editor.action.clipboardCopyAction",
+				"when": "editorTextFocus"
+			},
+			{
+				"key": "Ctrl+Y",
+				"command": "editor.action.clipboardPasteAction",
+				"when": "editorTextFocus"
+			},
+			{
+				"key": "Ctrl+S",
+				"command": "emacsify.isearchForward"
+			},
+			{
+				"key": "Ctrl+R",
+				"command": "emacsify.isearchBackward"
+			}
+  
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"devDependencies": {
+		"typescript": "^1.8.5",
+		"vscode": "^0.11.x"
+	}
+}
